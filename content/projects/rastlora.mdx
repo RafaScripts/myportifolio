@@ -16,8 +16,53 @@ O projeto utliza de comunicação lora como rede principal mas para casos em que
 
 ## Materiais
 
-- ESP32 LoRa 868/915 Mhz com display OLED
+- ESP32 LoRa 868/915 Mhz com display OLED | Wifi | Bluetooth
 - Módulo GSM SIM800L
 - Sensor de temperatura e umidade DHT11
 - Módulo GPS NEO-6M
 
+### LoRa
+ecnologia de comunicação via Radio, que permite comunicação em logas distâncias com um consumo minimo de energia.
+
+Em áreas urbanas media de 3-4km em modulo pequeno, em zona rural de 8-10km.
+
+Protocolo LoRaWAN: Protocolo de comunicação que utiliza da tecnologia lora.
+
+LoRa opera em 3 frequências abertas liberadas por lei (para projetos de frequência fechada é necessário solicitar a Anatel uma licença de frequência). as frequências são:
+
+- 923Mhz
+- 915Mhz
+- 868Mhz
+- 433Mhz - proibida
+
+
+Em uma rede loraWAN é possível criar uma rede em estilo P2P, de forma que cada PONTO (Dispositivo de coleta de dados mais simples), comunica entre si ou direto com a TORRE (Dispositivo central para recebimento dos dados dos PONTOS), uma Torre geralmente cobre em media 10km, mas como os Pontos LoRa podem funcionar tando como receptor como transmissor, fazendo com que assim a quantidade de torres possam ser menores mas ainda assim cobrir grandes áreas.
+
+Seu grande diferencial de todos é o seu baixíssimo consumo de energia, em testes com um ESP32 LoRa da LILYGO, de Frequência Modular 915~868Mhz, com uma bateria de 300Mah, com envio de dados a cada 5Min teve uma duração media de 5 horas.
+
+### GSM
+O módulo GSM é um módulo de comunicação que permite a comunicação de dados via rede de telefonia móvel.
+
+Este modulo é utilizado como backup para o caso de a rede LoRa não estar disponível.
+
+Por este motivo passa a maior parte do tempo desconectado, e só é ativado quando a rede LoRa não está disponível.
+
+Este modulo tem um alto consumo de energia, por este motivo é utilizado apenas como backup.
+
+### GPS
+
+O módulo GPS é um módulo de comunicação que permite a obtenção de coordenadas geográficas.
+
+Este modulo é utilizado para a obtenção da localização do veículo.
+
+Este modulo tem um consumo de energia médio, por este motivo é utilizado apenas para obtenção de coordenadas.
+
+Sua precisão é de em media 5 metros de taxa de erro.
+
+### DHT11|DHT22
+
+O sensor de temperatura e umidade DHT11 é um sensor que permite a obtenção de temperatura e umidade do ambiente.
+
+Este sensor é utilizado para obtenção da temperatura e umidade do ambiente.
+
+Este sensor tem um consumo de energia baixo, por este motivo é utilizado para obtenção de temperatura e umidade.
