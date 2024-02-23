@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "rafascripts.dev.br",
     description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
+      "developer FullStack, Founder of Digitalmoon Tech, passionate about technology and programming.",
     url: "https://rafascripts.dev.br",
     siteName: "rafascripts.dev.br",
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         height: 1080,
       },
     ],
-    locale: "en-US",
+    locale: "pt-BR",
     type: "website",
   },
   robots: {
